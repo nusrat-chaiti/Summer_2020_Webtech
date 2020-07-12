@@ -1,0 +1,33 @@
+<students>
+	<student>
+		<serial>23</serial>
+		<fname>john</fname>
+		<lname>carter</lname>
+		<admissionDate>
+			<day>25</day>
+			<month>12</month>
+			<year>2015</year>
+		</admissionDate>
+	</student>
+	<student>
+		<serial>29</serial>
+		<fname>bob</fname>
+		<lname>marshal</lname>
+		<admissionDate>
+			<day>13</day>
+			<month>1</month>
+			<year>1999</year>
+		</admissionDate>
+	</student>
+	<student>
+		<serial>35</serial>
+		<fname>clark</fname>
+		<lname>kent</lname>
+		<admissionDate>
+			<day>17</day>
+			<month>06</month>
+			<year>2005</year>
+		</admissionDate>
+	</student>
+
+</students>
