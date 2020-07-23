@@ -2,10 +2,10 @@
 function checkName()
 {
 	
-  if($SERVER["REQUEST_METHOD"]=="post")
+  if($_SERVER["REQUEST_METHOD"]=="post")
   {
     $pname=$_POST['name'];
-    if($pname == "" || strlen($pname) < 2 ||ctype_digit($sname[0]) )
+    if($pname == "" || strlen($pname) < 2  )
     {
       echo"Name is not valid, enter valid name.";
     }
@@ -26,7 +26,72 @@ function checkEmail()
 }
 
 
+function gender()
+{
+   if($_SERVER["REQUEST_METHOD"] == "POST")
+  {
+    $gender = $_POST['gender'];
 
+    if($gender == "")
+    {
+      echo "Please, choose your gender.";
+    }
+  }
+              
+  
+}
+function dateOfBirth()
+{
+  if($_SERVER["REQUEST_METHOD"] == "POST")
+  {
+    $date = $_POST['dateOfBirth'];
+
+    if(empty($date))
+    {
+      echo "you need to select blood group.";
+    }
+  }
+}
+function bloodGroup()
+{
+  if($_SERVER["REQUEST_METHOD"] == "POST")
+  {
+    $bloodGroup = $_POST['bloodGroup'];
+
+    if(empty($bloodGroup))
+    {
+      echo "you need to select blood group.";
+    }
+  }
+
+
+}
+function checkDegree()
+{
+  if($_SERVER["REQUEST_METHOD"] == "POST")
+  {
+      $degree = $_POST['degree'];
+
+
+    if(empty($degree))
+    {
+      echo "you need to select your degrees...";
+    }
+  }
+}
+
+function checkPhoto()
+{
+  if($_SERVER["REQUEST_METHOD"] == "POST")
+  {
+    $photo= $_POST['photo'];
+
+    if(empty($photo))
+    {
+      echo "you need to select your photo..";
+    }
+  }
+}
 
 
 
@@ -38,7 +103,7 @@ function checkEmail()
 </head>
 <body>
   <table width="100%" border="1">
-    <form method="POST">
+    <form action="#" method="POST">
     <!--row-1-->
 
      <tr height="80px">
