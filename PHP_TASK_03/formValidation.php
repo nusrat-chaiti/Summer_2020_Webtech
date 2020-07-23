@@ -2,24 +2,25 @@
 function checkName()
 {
   //if(isset($_POST['submitBtn']))
-	//{
+  //{
     if($_SERVER["REQUEST_METHOD"]=="post")
    {
-    $pname=$_POST['name'];
+    $pname=$_POST['textfield'];
     if($pname == " " || strlen($pname) < 2  )
     {
       echo"Name is not valid, enter valid name.";
     }
 
-   //}
-  }
+   }
+   
+  
   
 }
 function checkEmail()
 {
-	if($_SERVER["REQUEST_METHOD"]=="POST")
+  if($_SERVER["REQUEST_METHOD"]=="POST")
   {
-    $mail=$_POST['email'];
+    $mail=$_POST['mailfield'];
     if($mail==" ")
     {
       echo "email field can not be empty";
@@ -28,7 +29,7 @@ function checkEmail()
 }
 
 
-function gender()
+function checkGender()
 {
    if($_SERVER["REQUEST_METHOD"] == "POST")
   {
@@ -50,7 +51,7 @@ function dateOfBirth()
 
     if(empty($date))
     {
-      echo "you need to select blood group.";
+      echo "you need to select date.";
     }
   }
 }
@@ -58,7 +59,7 @@ function bloodGroup()
 {
   if($_SERVER["REQUEST_METHOD"] == "POST")
   {
-    $bloodGroup = $_POST['bloodGroup'];
+    $bloodGroup = $_POST['bg'];
 
     if(empty($bloodGroup))
     {
@@ -86,7 +87,7 @@ function checkPhoto()
 {
   if($_SERVER["REQUEST_METHOD"] == "POST")
   {
-    $photo= $_POST['photo'];
+    $photo= $_POST['picFile'];
 
     if(empty($photo))
     {
@@ -104,7 +105,7 @@ function checkPhoto()
 </head>
 <body>
   <table width="100%" border="1">
-    <form action="#" method="POST">
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
     <!--row-1-->
 
      <tr height="80px">
