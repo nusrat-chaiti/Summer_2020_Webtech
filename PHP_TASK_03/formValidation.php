@@ -1,15 +1,17 @@
 <?php
 function checkName()
 {
-	
-  if($_SERVER["REQUEST_METHOD"]=="post")
-  {
+  //if(isset($_POST['submitBtn']))
+	//{
+    if($_SERVER["REQUEST_METHOD"]=="post")
+   {
     $pname=$_POST['name'];
-    if($pname == "" || strlen($pname) < 2  )
+    if($pname == " " || strlen($pname) < 2  )
     {
       echo"Name is not valid, enter valid name.";
     }
 
+   //}
   }
   
 }
@@ -94,10 +96,9 @@ function checkPhoto()
 }
 
 
-
 ?>
     
- <html>
+<html>
 <head>
   <title>profile</title>
 </head>
