@@ -160,7 +160,7 @@ function checkPhoto()
         Date Of Birth:
       </td>
       <td width="400px" align="center">
-        <input type="number" name="" size="5px ">/ 
+        <input type="number" name="dateOfBirth" size="5px ">/ 
         <input type="text" name="" size="5px ">/ 
         <input type="number" name="" size=" 5px"> 
         <i>(dd/mm/yyyy)</i>
@@ -200,7 +200,7 @@ function checkPhoto()
         Degree:
       </td>
       <td width="400px" align="center">
-        <input type="checkbox" name="">SSC
+        <input type="checkbox" name="Degree">SSC
         <input type="checkbox" name="">HSC
         <input type="checkbox" name="">BSc
         <input type="checkbox" name="">MSc
