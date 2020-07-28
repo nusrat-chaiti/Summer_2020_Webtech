@@ -20,7 +20,7 @@
 					<hr/>
 					<ul>
 						<li><a href="dashboard.html">Dashboard</a></li>
-						<li><a href="profile.html">View Profile</a></li>
+						<li><a href="profile.php">View Profile</a></li>
 						<li><a href="editprofile.html">Edit Profile</a></li>
 						<li><a href="changeprofilepicture.html">Change Profile Picture</a></li>
 						<li><a href="changepassword.html">Change Password</a></li>
