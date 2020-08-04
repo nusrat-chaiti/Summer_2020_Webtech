@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Signup</title>
+</head>
+<body>
+	<form action="registration.php" method="post">
+		<fieldset>
+			<legend><b>REGISTRATION</b></legend>
+			<form>
+				<br/>
+				<table width="100%" cellpadding="0" cellspacing="0">
+					<tr>
+						<td>id</td>
+						<td>:</td>
+						<td><input name="id" type="text"></td>
+						<td></td>
+					</tr>		
+					<tr><td colspan="4"><hr/></td></tr>
+					<tr>
+						<td>password</td>
+						<td>:</td>
+						<td>
+							<input name="password" type="password">
+							<!-- <abbr title="hint: sample@example.com"><b>i</b></abbr> -->
+						</td>
+						<td></td>
+					</tr>		
+					<tr><td colspan="4"><hr/></td></tr>
+					<tr>
+						<td>confirm password</td>
+						<td>:</td>
+						<td><input name="cpassword" type="password"></td>
+						<td></td>
+					</tr>		
+					<tr><td colspan="4"><hr/></td></tr>
+						
+					<tr>
+						<td>name</td>
+						<td>:</td>
+						<td><input name="name" type="name"></td>
+						<td></td>
+					</tr>		
+                    <tr><td colspan="4"><hr/></td></tr>
+                    
+                    <tr>
+						<td>email</td>
+						<td>:</td>
+						<td><input name="email" type="email"></td>
+						<td></td>
+					</tr>		
+					<tr><td colspan="4"><hr/></td></tr>
+					<tr>
+						<td colspan="3">
+							<fieldset>
+								<legend>user type</legend>    
+								<select name="utype" id="">
+                                    <option>user</option>
+                                    <option>admin</option>
+                                </select>
+							</fieldset>
+						</td>
+						<td></td>
+					</tr>		
+					
+				</table>
+				<hr/>
+				<input type="submit" value="Submit" name="submit">
+				<input type="reset">
+			</form>
+		</fieldset>
+	</form>
+</body>
+</html>
