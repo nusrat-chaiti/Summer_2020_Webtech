@@ -19,16 +19,17 @@
             $password = $_POST['password'];
             $cpassword = $_POST['cpassword'];
             $date =$_POST['dob'];
-            
             $user_type = $_POST['user_type'];
-          //   $len = strlen($name);
             $gender=$_POST['gender'];
 
             //checking password
 
 			if($_POST['password'] == $_POST['cpassword'])
 			{
-                $sql = "INSERT INTO customer (name, email, username, password, gender, dob, user_type) VALUES ('$name','$email','$uname','$password','$gender','$dob','$user_type')";
+                  
+              
+
+                $sql = "INSERT INTO customer (name, email, username, password, gender, dob, user_type) VALUES ('$name','$email','$uname','$password','$gender','$date','$user_type')";
                 if(mysqli_query($conn, $sql))
              {
                
@@ -70,6 +71,17 @@
 
 
             }
+
+            //validate date
+            // who will register in our website his age should be greater tha 15
+
+            else if(($date>=1 && $date<=31) && ($month >=1 && $month<=12) && ($year >=1900 && $year <=2002))
+            {
+                echo "valid date !";
+                
+            }
+
+
 
             
 			else
