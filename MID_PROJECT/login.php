@@ -47,10 +47,10 @@ if(isset($_POST['submit']))
                   setcookie('dob', $_POST['dob'], time()+48900000, '/');
                   setcookie('status',"OK",time()+48900000,'/'); 
                   
-               
+                  
                   
                  
-                  header('location: doctor_dashboard.html');
+                  header('location: doctor_dashboard.php');
                 
                  
                }
@@ -66,13 +66,13 @@ if(isset($_POST['submit']))
                 setcookie('gender', $_POST['gender'], time()+3600, '/');
 
                 setcookie('dob', $_POST['dob'], time()+3600, '/');               
-                header('location: doctor_dashboard.html');
+                header('location: doctor_dashboard.php');
 
                
                }
                if($data['user_type']=='Doctor')
                {
-                   header('location: doctor_dashboard.html');
+                   header('location: doctor_dashboard.php');
                }
                else if($data['user_type']=='Customer')
                {
@@ -97,6 +97,8 @@ if(isset($_POST['submit']))
 
 
         }
+        mysqli_close($conn);
+
     }
     else{
 

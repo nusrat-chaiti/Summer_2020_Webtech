@@ -11,7 +11,8 @@
             <td align="center">
                 <p><b>ONLINE DOCTOR</b></p>
                 <p align ="center"><i>get medical treatment from home</i></p>
-                <p align="right"> <a href="about.html">about</a> | <a href="contact.html">contact</a>| <a href="blog.html">Blog</a>| <a href="logout.php">Logout</a></p>
+                <p align="right"> <a href="doctor_dashboard.php">dashboard</a> | <a href="patient.html">patient</a> | <a href="edit_profile.php">edit profile picture</a>| <a href="view_profile.php">view profile</a>| <a href="logout.php">Logout</a></p>
+
 
             </td>
         </tr>
@@ -19,17 +20,21 @@
             <td align="center">
                 <fieldset>
                     <legend><b>PROFILE PICTURE</b></legend>
-                    <form action="picture.php" method="post" enctype="multipart/form-data">
+                    <form action="view_profile.php" method="post" enctype="multipart/form-data">
                 
                         
                         <br />
                         <input name = "picture" type="file">
                         <hr />
-                        <input type="submit" name ="submit" ><br/>
+                        <input type="submit" name ="submit" >
+
+
                         
-                                  <?php
+                        <?php
+                        session_start();
                                   if (isset($_POST['submit']))
                                   {
+                                    
 
                                     
                                   $dir_path="image/";
@@ -38,7 +43,10 @@
                                   if(is_dir($dir_path))
                                   {
 
-                                  $filedir = 'image/'.$_FILES['picture']['name'];
+                                    $filedir = 'image/'.$_FILES['picture']['name'].'.jpg';
+                                    //  $filedir = 'image/'.time()+53789872038338888.'.jpg';
+
+
                                   if(move_uploaded_file($_FILES['picture']['tmp_name'],$filedir))
                                   {
                                     echo '<img src="image/'.$_FILES["picture"]["name"].'" style="width:280px;height:210px;"  ><br/>'; 
@@ -49,20 +57,23 @@
                                   else{
                                     echo "file is not uploaded";
                                   }
+                                
                                   
-                                  
-                                  }
+                                 }
+                                 setcookie('picture',$filedir, time()+367480000, '/');
+                                 setcookie('status',"OK",time()+48900000,'/'); 
+                                 header("location: view_profile.php");
+
 
                                   }
-                                  ?>
+                            ?>
                                    
                                        <p align="center"> <a href="view_profile.php">view profile</a>   </p>
                                     
 
-                        
                     </form>
                 </fieldset>
-                
+
                <!-- <img src="image/doc-1.jpg" alt=" " style="width:280px;height:210px;" > -->
                 <!-- <p><b>NAME:</b>DR. JOHN</p>
                 <p><b>DEGREE:</b>Master of Medical Science (MMSc, MMedSc)</p>

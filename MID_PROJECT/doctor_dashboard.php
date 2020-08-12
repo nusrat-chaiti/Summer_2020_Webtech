@@ -12,30 +12,30 @@
                 <p align ="center"><b>ONLINE DOCTOR</b></p>
 
                 <p align ="center"><i>get medical treatment from home</i></p>
-                <p align="right"> <a href="about.html">about</a> | <a href="contact.html">contact</a>| <a href="blog.html">Blog</a>| <a href="logout.php">Logout</a></p>
+                <p align="right"> <a href="patient.php">patient</a> | <a href="edit_profile.php">edit profile picture</a>| <a href="view_profile.php">view profile</a>|  <a href="change_password.html">change password </a> |  <a href="logout.php">Logout</a></p>
 
             </td>
 
 
         </tr>
         <tr>
-            <td>
+            <!-- <td>
                 <ul>
                     <li>
-                        <p align="left"> <a href="view_profile.html">view profile</a>   </p>
+                        <p align="left"> <a href="view_profile.php">view profile</a>   </p>
                     </li>
-                    <!-- <li>
-                        <P align ="left"><a href="edit_profile.html">edit profile</a> </P>
+                    <li>
+                        <P align ="left"><a href="edit_profile.php">edit profile</a> </P>
 
-                    </li> -->
+                    </li>
                     <li>
                         <P align ="left"><a href="view_patients.html">view patients</a> </P>
 
                     </li>
                 </ul>
 
-            </td>
-            <td align="center">
+            </td> -->
+            <td colspan="2" align="center">
                 <!-- <fieldset>
                     <legend><b>PROFILE PICTURE</b></legend>
                     <form action="picture.php" method="post" enctype="multipart/form-data">
@@ -47,7 +47,7 @@
                         <input type="submit" name ="submit" >
                     </form>
                 </fieldset> -->
-              <p><b><i>WELCOME TO YOUR ACCOUNT!! </i></b></p>
+              <p><b><i>WELCOME TO YOUR ACCOUNT!! <?php echo $_COOKIE['uname']; ?> </i></b></p>
 
             </td>
 
