@@ -1,0 +1,20 @@
+  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="nameCheck.js"></script>
+    <title>Name</title>
+</head>
+<body>
+
+    <form action="nameCheck.php" onsubmit="return Validate()"  method="POST" >
+        <header>Name</header><br>
+        <input type="text" id="name" name="name" onkeyup="Remover()" onblur="empty()" > <i id="name_Msg"></i>
+        <br>
+        <input type="submit" name="submit" value="Submit" style="margin-top: 10px;">
+    </form>
+    
+</body>
+</html>
