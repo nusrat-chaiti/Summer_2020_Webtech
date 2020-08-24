@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="emailCheck.js"></script>
+    <title>email</title>
+</head>
+<body>
+    <form action="emailCheck.php" onsubmit="return Validate()" method="POST">
+        <b>Email</b> <br><br>
+
+        <input type="text" id="email" name="email"  onkeyup="Remover()" onblur="empty()"> 
+        <abbr title="hint: sample@example.com"><b>i</b></abbr>
+        <i id="email_Msg"></i>
+        <br><br>
+        <input type="submit" name="submit" value="Submit" >
+    </form>
+    
+</body>
+</html>
