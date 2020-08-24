@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="degree.js"></script>
+    <title>Gender</title>
+</head>
+<body>
+    <form action="degree.php" onsubmit="return Validate()" method="POST">
+        <fieldset align = "center">
+            <legend>Degree</legend>
+             <input type="checkbox" id="SSC" name="degree" onclick="Remover()"  onmouseout="empty()" >SSC
+             <input type="checkbox" id="HSC" name="degree" onclick="Remover()" onmouseout="empty()" >HSC
+             <input type="checkbox" id="BSc" name="degree" onclick="Remover()"  onmouseout="empty()">BSc
+             
+        </fieldset>
+        <i id="degree_Msg"></i><br>
+        <input type="submit" name="submit" value="Submit" >
+
+    </form>
+    
+    
+</body>
+</html>
