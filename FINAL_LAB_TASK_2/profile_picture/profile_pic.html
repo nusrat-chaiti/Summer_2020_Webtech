@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="profile.js"></script>
+    <title>Profile Validation</title>
+</head>
+<body>
+    <form action="profile.php" onsubmit="return Validate()" method="POST">
+       
+        <fieldset>
+         <legend>Profile Picture</legend>
+        User Id <input type="number" id="id" name="id" onkeyup="Remover()" onblur="empty()" onclick="Remover()"> <i id="profile_Msg"></i> <br><br>
+        Picture<input type="file"  id="file" name ="file" onmouseout="empty()" onmouseover="Remover()" onclick="Remover()" >
+        <br><br>
+        <i id="picture_Msg"></i>
+        <hr>
+        <br>
+        <input type="submit" name="submit" value="Submit">
+    </fieldset>
+    
+    
+    </form>
+    
+    
+</body>
+</html>
