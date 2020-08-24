@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="bg.js"></script>
+    <title>Gender Validation</title>
+</head>
+<body>
+    <form action="bg.php" onsubmit="return Validate()" method="POST">
+        Blood Group 
+        <select name="blood" id="bloodgroup"  onmouseout="empty()" onclick="Remover()" onmouseover="Remover()">
+            <option value="A+">A+</option>
+            <option value="B+">B+</option>
+            <option value="O+">O+</option>
+            <option value="AB+">AB+</option>
+            <option value="A-">A-</option>
+            <option value="B-">B-</option>
+            <option value="O-">O-</option>
+            <option value="AB-">AB-</option>
+        </select>   <i id="blood_Msg"></i> <br><br>
+        <input type="submit" name="submit" value="Submit" >
+
+    </form>
+    
+    
+</body>
+</html>
