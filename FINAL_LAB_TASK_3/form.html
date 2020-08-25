@@ -2,10 +2,13 @@
 <html>
     <head>
       <title>profile</title>
+
+      <script type="text/javascript" src="form.js"></script>
+
     </head>
     <body>
       <table width="100%" border="1">
-        <form action="form.php" method="POST">
+        <form action="form.php" onsubmit="return validate()" method="POST">
         <!--row-1-->
     
          <tr height="80px">
@@ -22,7 +25,8 @@
             Name:
           </td>
           <td width="400px" align="center">
-            <input type="text" name="textfield" size="50px"><?php checkName();?> <br/>
+            <input type="text" id="name" name="name" onkeyup="Remover()" onblur="empty()" > <b><i id="name_Msg"></i></b> 
+
           </td>
           <td width="90px"></td>
     
@@ -35,7 +39,10 @@
             Email:
           </td>
           <td width="400px" align="center">
-            <input type="Email" name="mailfield" size="50px"><?php checkEmail(); ?> <br/>
+            <input type="text" id="email" name="email"  onkeyup="Remover()" onblur="empty()"> 
+            <abbr title="hint: sample@example.com"><b>i</b></abbr>
+            <i id="email_Msg"></i>
+
           </td>
           <td width="90px"></td>
          </tr>
@@ -46,10 +53,10 @@
             Gender:
           </td>
           <td width="400px" align="center">
-            <input type="radio" name="gender">male
-            <input type="radio" name="gender">female
-            <input type="radio" name="gender">other
-            <?php checkGender(); ?> <br/>
+            <input type="radio" name="gender" id="Male"  onclick="Remover()"  onmouseout="empty()" >Male
+            <input type="radio" name="gender" id="Female" onclick="Remover()" onmouseout="empty()" >Female
+            <input type="radio" name="gender" id="Other"  onclick="Remover()"  onmouseout="empty()" >Other
+            <b><i id="gender_Msg"></i></b><br>
           </td>
           <td width="90px"> </td>
          </tr>
@@ -60,12 +67,15 @@
             Date Of Birth:
           </td>
           <td width="400px" align="center">
-            <input type="number" name="dateOfBirth" size="5px ">/ 
-            <input type="text" name="dateOfBirth" size="5px ">/ 
-            <input type="number" name="dateOfBirth" size=" 5px"> 
+            <input type="number" id="date" name="date" onkeyup="Remover()" onblur="empty()" onclick="Remover()"> / 
+            <input type="number" id="month" name="month" onkeyup="Remover()" onblur="empty()" onclick="Remover()" > /
+            <input type="number" id="year" name="year"  onkeyup="Remover()" onblur="empty()" onclick="Remover()">
+             
+            <i id="dob_msg"></i>
+
             <i>(dd/mm/yyyy)</i>
     
-            <?php dateOfBirth(); ?> <br/>
+          <br/>
           </td>
           <td width="90px"> </td>
     
@@ -77,18 +87,17 @@
             Blood Group:
           </td>
           <td width="400px" align="center">
-            <select name="bg">
-              <option>A+</option>
-              <option>B+</option>
-              <option>AB+</option>
-              <option>O+</option>
-              <option>A-</option>
-              <option>B-</option>
-              <option>AB-</option>
-              <option>O-</option>
-              
-            </select>
-            <?php bloodGroup(); ?> <br/>
+            <select name="blood" id="bloodgroup"  onmouseout="empty()" onclick="Remover()" onmouseover="Remover()">
+                <option value="A+">A+</option>
+                <option value="B+">B+</option>
+                <option value="O+">O+</option>
+                <option value="AB+">AB+</option>
+                <option value="A-">A-</option>
+                <option value="B-">B-</option>
+                <option value="O-">O-</option>
+                <option value="AB-">AB-</option>
+            </select>   <i id="blood_Msg"></i> <br><br>
+
           </td>
           <td width="90px"> </td>
     
@@ -100,11 +109,11 @@
             Degree:
           </td>
           <td width="400px" align="center">
-            <input type="checkbox" name="Degree">SSC
-            <input type="checkbox" name="degree">HSC
-            <input type="checkbox" name="degree">BSc
-            <input type="checkbox" name="degree">MSc
-            <?php checkDegree(); ?> <br/>
+            <input type="checkbox" id="SSC" name="degree" onclick="Remover()"  onmouseout="empty()" >SSC
+            <input type="checkbox" id="HSC" name="degree" onclick="Remover()" onmouseout="empty()" >HSC
+            <input type="checkbox" id="BSc" name="degree" onclick="Remover()"  onmouseout="empty()">BSc
+            <i id="degree_Msg"></i><br>
+
           </td>
           <td width="90px"> </td>
          </tr>
@@ -116,8 +125,9 @@
             Photo:
           </td>
           <td colspan="2" width="400px" align="center">
-            <input type="file" name="picFile" size="">
-            <?php checkPhoto(); ?> <br/>
+            Picture<input type="file"  id="file" name ="file" onmouseout="empty()" onmouseover="Remover()" onclick="Remover()" >
+            <br><br>
+            <i id="picture_Msg"></i>
           </td>
           
           
@@ -135,7 +145,7 @@
     
          <tr height="50px">
           <td colspan="3" align="right">
-            <input type="submit" name="submitBtn" value="submit">
+            <input type="submit" name="submit" value="submit">
             <input type="reset" name="resetBtn" value="reset">
     
             
