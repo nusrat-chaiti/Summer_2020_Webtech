@@ -43,60 +43,76 @@ function nremover()
 //// email check
 
 
-function empty()
+function f1()
 {
-    var email = document.getElementById("email").value;
-   
+    var name=document.getElementById('name').value;
+    var email=document.getElementById('email').value;
+	var password=document.getElementById('password').value;
 
-    if(email=="")
-    {
-       document.getElementById("email_Msg").innerHTML=" email field can't be empty";
-    }
-    
-    
-    else
-    {
-        var count=0;
-		for( i=0 ; i < email.length ; i++)
-		{
-			if(email[i]=='@')
+			if(name!="" && email!="" && password!="" && document.getElementById('email_Msg').innerHTML=="")
 			{
-				count++;
-			}
-			else
-				continue;
-		}
-		if(count==1)
-		{
-			var at_the_ret = email.split("@");
-			var dot = at_the_ret[1].split(".");
-			var last;
-			for( i=0 ; i < dot.length ; i++)
-			{
-				last = dot[i];
-			}
-			if( last == "com" || last == "edu"|| last=="org")
-			{
-				return true;
-			}
-			else
-			{
-                document.getElementById("email_Msg").innerHTML=" enter valid email";
+				
+				var xhttp = new XMLHttpRequest();
+			 xhttp.open('POST', '../php/regCheck.php', true);
+			 xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+			 xhttp.send('name='+name+'&'+'password='+password+'&'+'email='+email);
 
+             xhttp.onreadystatechange = function ()
+             {
+                if(this.readyState == 4 && this.status == 200)
+                {
+
+                    if(this.responseText != "")
+                    {
+                        document.getElementById('email_Msg').innerHTML = this.responseText;
+                        document.getElementsByTagName('a')[0].style.display='inline';
+
+                    }
+                    else
+                    {
+                        document.getElementById('email_Msg').innerHTML = "";
+                    }
+                    
+                }	
+            }
+            
+				//document.getElementsByTagName('a')[0].style.display='inline';
 			}
+    
+}
+  
+
+// function empty()
+// {
+
+// }
+function eremover()  
+{
+    var email = document.getElementById('email').value;
+    var xhttp = new XMLHttpRequest();
+    xhttp.open('POST', '../php/emailCheck.php', true);
+    xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhttp.send('email='+email);
+
+    xhttp.onreadystatechange = function ()
+    {
+        if(this.readyState == 4 && this.status == 200) 
+        {
+
+        if(this.responseText != "") 
+        {
+            document.getElementById('email_Msg').innerHTML = this.responseText;
         }
         else
         {
-            document.getElementById("email_Msg").innerHTML=" enter valid email";
-
+            document.getElementById('email_Msg').innerHTML = "";
         }
+        
+    }	
     }
+
 }
 
-function eremover()
-{
-    document.getElementById("email_Msg").innerHTML="";
-}
 
 ///validation of pass
 

@@ -1,4 +1,15 @@
 
+<?php
+
+if (isset($_GET['error'])) {
+	
+	if($_GET['error'] == 'db_error'){
+		echo "Something went wrong...please try again";
+	}
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +18,7 @@
 </head>
 <body>
 
-	<form action="#" onsubmit="return Validate()"  method="post">
+	<form action="../php/regCheck.php" onsubmit="return Validate()"  method="post">
 		<fieldset>
 			<legend>SignUp</legend>
 			<table>
@@ -36,7 +47,7 @@
 				
 				<tr>
 					<td></td>
-					<td><input type="button" name="submit" value="Submit" onclick="f1()" >
+					<td><input type="submit" name="submit" value="Submit" onclick="f1()" >
                     <a href="login.php" style="display: none">login</a>
                    </td>
 				</tr>
