@@ -6,16 +6,16 @@
 
 		$username 	= $_POST['username'];
 		$password 	= $_POST['password'];
-		$email 		= $_POST['conNum'];
+		$conNum 		= $_POST['conNum'];
 
-		if(empty($username) || empty($password) || empty($email)){
+		if(empty($username) || empty($password) || empty($conNum)){
 			header('location: ../views/register.php?error=null_value');
 		}else{
 
 			$user = [
 				'username'=> $username,
 				'password'=> $password,
-				'email'=> $email
+				'conNum'=> $conNum
 			];
 
 			$status = insert($user);
