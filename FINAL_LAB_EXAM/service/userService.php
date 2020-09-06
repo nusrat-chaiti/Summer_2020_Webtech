@@ -45,11 +45,19 @@
 		$result = mysqli_query($conn, $sql);
 		$user = mysqli_fetch_assoc($result);
 
-		if(count($user) > 0 ){
-			return true;
-		}else{
-			return false;
+		if($user['type']=="author")
+		{
+			header('location: ../views/authorHome.php');
 		}
+
+		
+
+			if(count($user) > 0 ){
+				return true;
+			}else{
+				return false;
+			}
+		
 	}
 
 
