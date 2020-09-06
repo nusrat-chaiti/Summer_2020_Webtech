@@ -19,7 +19,7 @@
 
 	<form action="../php/userController.php" method="post">
 		<fieldset>
-			<legend>Edit User</legend>
+			<legend>Edit author information</legend>
 			<table>
 				<tr>
 					<td>Username</td>
@@ -31,7 +31,7 @@
 				</tr>
 				<tr>
 					<td>Email</td>
-					<td><input type="text" name="email" value="<?=$user['email']?>"></td>
+					<td><input type="number" name="conNum" value="<?=$user['conNum']?>"></td>
 				</tr>
 				<tr>
 					<td></td>

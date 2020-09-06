@@ -18,7 +18,7 @@
 
 	<form action="../php/userController.php" method="post">
 		<fieldset>
-			<legend>Create New User</legend>
+			<legend>Create New author</legend>
 			<table>
 			   <!-- <tr>
 					<td>User id:</td>
