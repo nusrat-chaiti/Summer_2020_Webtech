@@ -29,8 +29,8 @@
 					<td><input type="password" name="password"></td>
 				</tr>
 				<tr>
-					<td>Email</td>
-					<td><input type="text" name="email"></td>
+					<td>contact number</td>
+					<td><input type="number" name="conNum"></td>
 				</tr>
 				<tr>
 					<td></td>

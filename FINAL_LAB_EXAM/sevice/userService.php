@@ -60,7 +60,7 @@
 			echo "DB connection error";
 		}
 
-		$sql = "insert into users values('', '{$user['username']}','{$user['password']}', '{$user['email']}', 'admin')";
+		$sql = "insert into users values('', '{$user['username']}','{$user['password']}', '{$user['conNum']}', 'admin')";
 		if(mysqli_query($conn, $sql)){
 			return true;
 		}else{
@@ -76,7 +76,7 @@
 			echo "DB connection error";
 		}
 
-		$sql = "update users set username='{$user['username']}', password='{$user['password']}', email='{$user['email']}' where id={$user['id']}";
+		$sql = "update users set username='{$user['username']}', password='{$user['password']}', conNum='{$user['conNum']}' where id={$user['id']}";
 
 		if(mysqli_query($conn, $sql)){
 			return true;
